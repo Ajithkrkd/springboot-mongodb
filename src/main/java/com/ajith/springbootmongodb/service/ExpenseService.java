@@ -13,7 +13,7 @@ import java.util.List;
 public class ExpenseService {
 
     private final ExpenseRepository repository;
-    public void addExpense(@RequestBody  Expense expense){
+    public void addExpense(Expense expense){
         repository.insert ( expense );
     }
     public void updateExpense(Expense expense){

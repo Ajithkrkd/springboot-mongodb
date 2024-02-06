@@ -17,7 +17,7 @@ public class ExpenseController {
     private  final ExpenseService expenseService;
 
     @PostMapping
-    public ResponseEntity addExpense(Expense expense){
+    public ResponseEntity addExpense(@RequestBody  Expense expense){
         expenseService.addExpense(expense);
         return ResponseEntity.status ( HttpStatus.CREATED ).build();
     }

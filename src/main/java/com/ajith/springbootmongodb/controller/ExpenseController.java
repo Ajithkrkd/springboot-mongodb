@@ -22,7 +22,7 @@ public class ExpenseController {
         return ResponseEntity.status ( HttpStatus.CREATED ).build();
     }
     @PutMapping
-    public ResponseEntity<String> updateExpense(Expense expense){
+    public ResponseEntity<String> updateExpense(@RequestBody Expense expense){
         expenseService.updateExpense ( expense );
     return ResponseEntity.ok ("Expense updated successfully");
     }
@@ -37,6 +37,6 @@ public class ExpenseController {
     @DeleteMapping("/{id}")
     public ResponseEntity < String > deleteExpense(@PathVariable String id){
         expenseService.deleteExpense ( id );
-        return ResponseEntity.status (HttpStatus.NO_CONTENT).body ( "Expense deleted successfully with id "+ id );
+        return ResponseEntity.ok ( "Expense deleted successfully with id "+ id );
     }
 }
